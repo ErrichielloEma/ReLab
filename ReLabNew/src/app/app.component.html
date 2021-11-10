@@ -1,0 +1,48 @@
+{{title}}
+<!--Centriamo la mappa alle nostre coordinate-->
+<google-map [center]="center">
+  <!--Mettiamo un marker alle nostre coordinate-->
+  <map-marker [position]="position" [label]="label" [title]="title" [options]="markerOptions">
+  </map-marker>
+  <map-marker [position]="position2" [label]="label2" [title]="title"></map-marker>
+  <map-marker [position]="positionProcione1" [options]="markerOptions1" [title]="title"></map-marker>
+  <map-marker [position]="positionProcione2" [options]="markerOptions2" [title]="title"></map-marker>
+  <map-marker [position]="positionProcione3" [options]="markerOptions3" [title]="title"></map-marker>
+
+  <map-circle [center]="position" [radius]="50" [options]='circleOptions'>
+  </map-circle>
+  <map-circle [center]="position2" [radius]="50" [options]='circleOptions'>
+  </map-circle>
+
+  <map-polygon [paths]="vertices">
+  </map-polygon>
+  <map-polygon [paths]="vertices2" [options]='verticesOptions2' >
+  </map-polygon>
+</google-map>
+<br>
+<h3>Cerchio</h3>
+<button (click)=redChange()>
+  Rosso
+</button>
+
+<button (click)=pinkChange()>
+  Rosa
+</button>
+
+<button (click)=purpleChange()>
+  Viola
+</button>
+<br>
+<h3>Rettangolo</h3>
+<button (click)=redChangeR()>
+  Rosso
+</button>
+
+<button (click)=pinkChangeR()>
+  Rosa
+</button>
+
+<button (click)=purpleChangeR()>
+  Viola
+</button>
+
