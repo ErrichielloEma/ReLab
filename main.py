@@ -8,9 +8,13 @@ from flask_cors import CORS
 
 # Creating a new "app" by using the Flask constructor. Passes __name__ as a parameter.
 app = Flask(__name__)
+CORS(app)
 
 # Stringa di connessione al DB
 app.config["MONGO_URI"] = "mongodb+srv://user_spiegazioni:2xR9laRHWUaSUDhi@cluster0.7ftto.mongodb.net/relab?retryWrites=true&w=majority" #Importante qui va specificato il nome del DB
+
+# Per rispondere alle chiamate cross origin
+
 
 # Annotation that allows the function to be hit at the specific URL.
 @app.route("/")
@@ -65,8 +69,7 @@ def get_vettoreeie(sezione):
 
 mongo = PyMongo(app)
 
-# Per rispondere alle chiamate cross origin
-CORS(app)
+
 
 # Checks to see if the name of the package is the run as the main package.
 if __name__ == "__main__":

@@ -7,22 +7,27 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ReLabNew';
   center: any;
-  position: any;
+
   label: string;
+  label2: string;
+
+  position: any;
   position2: any;
   positionProcione1: any;
   positionProcione2: any;
   positionProcione3: any;
-  label2: string;
+
   circleOptions: { fillColor: string; };
   markerOptions: google.maps.MarkerOptions;
   markerOptions1: google.maps.MarkerOptions;
   markerOptions2: google.maps.MarkerOptions;
   markerOptions3: google.maps.MarkerOptions;
+  
   vertices: google.maps.LatLngLiteral[];
   verticesOptions: { fillColor: string; };
   vertices2: google.maps.LatLngLiteral[];
   verticesOptions2: { fillColor: string; };
+  
   constructor() {
     this.center = { lat: 45.506738, lng: 9.190766 };
     this.position = this.center;
@@ -33,18 +38,18 @@ export class AppComponent {
     this.positionProcione1 = { lat: 45.506000, lng: 9.190500 };
     this.positionProcione2 = { lat: 45.506500, lng: 9.191500 };
     this.positionProcione3 = { lat: 45.506800, lng: 9.193000 };
-    
+
     this.circleOptions = { fillColor: 'red' };
     this.verticesOptions = { fillColor: 'red' };
     this.verticesOptions2 = { fillColor: 'red' };
-    
+
     this.vertices = [
       { lat: this.center.lat + 0.001, lng: this.center.lng - 0.002 },
       { lat: this.center.lat, lng: this.center.lng },
       { lat: this.center.lat - 0.001, lng: this.center.lng - 0.002 }
     ];
     this.vertices2 = [
-      { lat: this.center.lat + 0.001, lng: this.center.lng + 0.002},
+      { lat: this.center.lat + 0.001, lng: this.center.lng + 0.002 },
       { lat: this.center.lat + 0.001, lng: this.center.lng },
       { lat: this.center.lat - 0.001, lng: this.center.lng },
       { lat: this.center.lat - 0.001, lng: this.center.lng + 0.002 }
@@ -54,7 +59,7 @@ export class AppComponent {
       url: './assets/img/cat_acrobat.ico',
       scaledSize: new google.maps.Size(60, 60)
     }
-    
+
     let iconData2: google.maps.Icon = {
       url: './assets/img/raccoon (1).png',
       scaledSize: new google.maps.Size(60, 60)
@@ -97,6 +102,6 @@ export class AppComponent {
     this.verticesOptions2 = { fillColor: 'purple' }
   }
 
-  
+
 }
 
